@@ -14,14 +14,14 @@ Steps Taken:
    Removed encoding artifacts and normalized symbols (e.g., replaced `â‚¹` with ₹ and `μ` with `micro`).
    Split complex fields such as `SKU/Pack/Price` using regular expressions to extract structured data like:
 
-    * **SKU ID**
-    * **Pack Size**
-    * **Price (Numeric)**
-  * Parsed and unpacked nested fields in `Properties` using `ast.literal_eval()` where appropriate.
-  * Handled missing or invalid values:
+    SKU ID
+    Pack Size
+    Price (Numeric)
+  Parsed and unpacked nested fields in `Properties` using `ast.literal_eval()` where appropriate.
+  Handled missing or invalid values:
 
-    * Replaced missing prices with `NaN` and dropped where critical.
-    * Standardized units across descriptions and cleaned column headers.
+    Replaced missing prices with `NaN` and dropped where critical.
+    Standardized units across descriptions and cleaned column headers.
 
  2.Exploratory Data Analysis (EDA)
 
@@ -33,41 +33,41 @@ Key Insights:
 
 Statistics:
 
-  * **Total Unique Categories:** `X` (based on your data)
-  * **Total Products:** `Y`
-  * **Median Price:** ₹`Z`
+  * Total Unique Categories: `X` (based on your data)
+  * Total Products: `Y`
+  * Median Price: ₹`Z`
 
 Outliers Identified:
 
-  * Specific SKUs with much higher prices—these are visualized in the Top 5 chart.
+   Specific SKUs with much higher prices—these are visualized in the Top 5 chart.
 
  3. Visualizations Included
 
-* `price_distribution.png`: Histogram showing overall price skew.
-* `top5_expensive_products.png`: Top 5 costliest products by name.
-* `boxplot_price_by_category.png`: Category-wise price distribution with outliers.
+ `price_distribution.png`: Histogram showing overall price skew.
+ `top5_expensive_products.png`: Top 5 costliest products by name.
+ `boxplot_price_by_category.png`: Category-wise price distribution with outliers.
 
 These visualizations were built using `matplotlib`, `seaborn`, and `pandas`.
 
  4. Optional Bonus – Data Enrichment
 
-* Extracted numerical values from textual description fields (e.g., concentration in `%`, volume in `mL`, or dimensions in `μm`) where available.
-* Derived a new column: **price per unit** (where pack size and quantity were clear).
+ Extracted numerical values from textual description fields (e.g., concentration in `%`, volume in `mL`, or dimensions in `μm`) where available.
+ Derived a new column: **price per unit** (where pack size and quantity were clear).
 
  5. Tools & Libraries Used
 
-* `pandas`, `numpy`, `seaborn`, `matplotlib`
-* Optional: `re`, `ast` for parsing and regex-based cleaning
+ `pandas`, `numpy`, `seaborn`, `matplotlib`
+ Optional: `re`, `ast` for parsing and regex-based cleaning
 
 
 
 Assumptions Made
 
-* Category and pricing columns were inferred based on partial string matches (`'Category'`, `'Price'`, etc.).
-* Where `SKU/Pack/Price` format was ambiguous, only entries with clear numeric price were retained.
-* For missing units (e.g., no `μL` or `mL`), assumptions were not made to avoid misrepresentation.
+ Category and pricing columns were inferred based on partial string matches (`'Category'`, `'Price'`, etc.).
+ Where `SKU/Pack/Price` format was ambiguous, only entries with clear numeric price were retained.
+r missing units (e.g., no `μL` or `mL`), assumptions were not made to avoid misrepresentation.
 
----
+
 
  Challenges Faced
 
@@ -84,4 +84,4 @@ Plotting failed when some categories had very few items, requiring filtering log
  `README.md`: Project summary with usage instructions.
 
 
-Le
+
